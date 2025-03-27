@@ -5,17 +5,19 @@ namespace HotelManagement.Models;
 
 public partial class Room
 {
-    public int RoomId { get; set; }
+    public int Idroom { get; set; }
 
-    public string RoomNumber { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-    public string Type { get; set; } = null!;
+    public int IdroomType { get; set; }
 
     public decimal Price { get; set; }
+
+    public string? Image { get; set; }
 
     public string Status { get; set; } = null!;
 
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 
-    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
+    public virtual RoomType IdroomTypeNavigation { get; set; } = null!;
 }

@@ -5,27 +5,27 @@ namespace HotelManagement.Models;
 
 public partial class Booking
 {
-    public int BookingId { get; set; }
+    public int Idbooking { get; set; }
 
-    public int UserId { get; set; }
+    public int Idaccount { get; set; }
 
-    public int RoomId { get; set; }
+    public int Idroom { get; set; }
 
-    public DateTime CheckIn { get; set; }
+    public DateOnly StartDate { get; set; }
 
-    public DateTime CheckOut { get; set; }
+    public DateOnly EndDate { get; set; }
 
-    public decimal TotalPrice { get; set; }
+    public decimal Deposit { get; set; }
 
     public string Status { get; set; } = null!;
 
-    public virtual ICollection<Approval> Approvals { get; set; } = new List<Approval>();
+    public string? Note { get; set; }
 
-    public virtual Bill? Bill { get; set; }
+    public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();
 
-    public virtual Room Room { get; set; } = null!;
+    public virtual Account IdaccountNavigation { get; set; } = null!;
+
+    public virtual Room IdroomNavigation { get; set; } = null!;
 
     public virtual ICollection<ServiceBooking> ServiceBookings { get; set; } = new List<ServiceBooking>();
-
-    public virtual User User { get; set; } = null!;
 }

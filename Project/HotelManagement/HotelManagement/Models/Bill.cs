@@ -5,23 +5,19 @@ namespace HotelManagement.Models;
 
 public partial class Bill
 {
-    public int BillId { get; set; }
+    public int Idbill { get; set; }
 
-    public int UserId { get; set; }
+    public string Invoice { get; set; } = null!;
 
-    public int? BookingId { get; set; }
+    public int Idbooking { get; set; }
 
-    public int? ServiceBookingId { get; set; }
+    public int Idaccount { get; set; }
 
-    public decimal TotalAmount { get; set; }
+    public DateTime PaymentDate { get; set; }
 
-    public string PaymentStatus { get; set; } = null!;
+    public decimal TotalPrice { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    public virtual Account IdaccountNavigation { get; set; } = null!;
 
-    public virtual Booking? Booking { get; set; }
-
-    public virtual ServiceBooking? ServiceBooking { get; set; }
-
-    public virtual User User { get; set; } = null!;
+    public virtual Booking IdbookingNavigation { get; set; } = null!;
 }

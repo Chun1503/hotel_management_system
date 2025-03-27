@@ -5,23 +5,15 @@ namespace HotelManagement.Models;
 
 public partial class ServiceBooking
 {
-    public int ServiceBookingId { get; set; }
+    public int IdserviceBooking { get; set; }
 
-    public int BookingId { get; set; }
+    public int Idbooking { get; set; }
 
-    public int ServiceId { get; set; }
+    public int Idservice { get; set; }
 
     public int Quantity { get; set; }
 
-    public decimal TotalPrice { get; set; }
+    public virtual Booking IdbookingNavigation { get; set; } = null!;
 
-    public string Status { get; set; } = null!;
-
-    public virtual ICollection<Approval> Approvals { get; set; } = new List<Approval>();
-
-    public virtual Bill? Bill { get; set; }
-
-    public virtual Booking Booking { get; set; } = null!;
-
-    public virtual Service Service { get; set; } = null!;
+    public virtual Service IdserviceNavigation { get; set; } = null!;
 }

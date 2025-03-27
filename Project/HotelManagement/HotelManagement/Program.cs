@@ -1,12 +1,11 @@
-using HotelManagement.Data;
+
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<HotelContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("HotelDbContext")));
+var connectionString = builder.Configuration.GetConnectionString("HotelDbContext");
 
 var app = builder.Build();
 
