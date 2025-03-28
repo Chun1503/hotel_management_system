@@ -1,0 +1,15 @@
+E:\PE\HotelBooking\HotelDataAccess\bin\Debug\net8.0\HotelDataAccess.deps.json
+E:\PE\HotelBooking\HotelDataAccess\bin\Debug\net8.0\HotelDataAccess.dll
+E:\PE\HotelBooking\HotelDataAccess\bin\Debug\net8.0\HotelDataAccess.pdb
+E:\PE\HotelBooking\HotelDataAccess\bin\Debug\net8.0\HotelBusiness.dll
+E:\PE\HotelBooking\HotelDataAccess\bin\Debug\net8.0\HotelBusiness.pdb
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.csproj.AssemblyReference.cache
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.AssemblyInfoInputs.cache
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.AssemblyInfo.cs
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.csproj.CoreCompileInputs.cache
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.csproj.CopyComplete
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.dll
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\refint\HotelDataAccess.dll
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.pdb
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\ref\HotelDataAccess.dll
