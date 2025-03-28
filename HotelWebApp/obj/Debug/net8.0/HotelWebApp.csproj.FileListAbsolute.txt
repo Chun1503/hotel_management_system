@@ -1,0 +1,8 @@
+E:\PE\HotelBooking\HotelWebApp\obj\Debug\net8.0\HotelWebApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\PE\HotelBooking\HotelWebApp\obj\Debug\net8.0\HotelWebApp.AssemblyInfoInputs.cache
+E:\PE\HotelBooking\HotelWebApp\obj\Debug\net8.0\HotelWebApp.AssemblyInfo.cs
+E:\PE\HotelBooking\HotelWebApp\obj\Debug\net8.0\HotelWebApp.csproj.CoreCompileInputs.cache
+E:\PE\HotelBooking\HotelWebApp\obj\Debug\net8.0\HotelWebApp.MvcApplicationPartsAssemblyInfo.cache
+E:\PE\HotelBooking\HotelWebApp\obj\Debug\net8.0\HotelWebApp.RazorAssemblyInfo.cache
+E:\PE\HotelBooking\HotelWebApp\obj\Debug\net8.0\HotelWebApp.RazorAssemblyInfo.cs
+E:\PE\HotelBooking\HotelWebApp\obj\Debug\net8.0\HotelWebApp.sourcelink.json

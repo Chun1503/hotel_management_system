@@ -3199,8 +3199,7 @@
     "net8.0": [
       "HotelBusiness >= 1.0.0",
       "HotelDataAccess >= 1.0.0",
-      "HotelRepositories >= 1.0.0",
-      "Microsoft.Extensions.DependencyInjection >= 9.0.3"
+      "HotelRepositories >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3251,12 +3250,6 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": {
-            "target": "Package",
-            "version": "[9.0.3, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",

@@ -13,3 +13,4 @@ E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.dll
 E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\refint\HotelDataAccess.dll
 E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.pdb
 E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\ref\HotelDataAccess.dll
+E:\PE\HotelBooking\HotelDataAccess\obj\Debug\net8.0\HotelDataAccess.sourcelink.json

@@ -12,3 +12,4 @@ E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\refint\HotelBusiness.dll
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.pdb
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.genruntimeconfig.cache
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\ref\HotelBusiness.dll
+E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.sourcelink.json

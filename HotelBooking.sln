@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelDataAccess", "HotelDat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelRepositories", "HotelRepositories\HotelRepositories.csproj", "{8F798820-CC62-4863-AE4D-9E6E362284EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelWebApp", "HotelWebApp\HotelWebApp.csproj", "{E7FDEA8A-4A83-4C9D-A14B-83A7D8B3F3FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelWebApp", "HotelWebApp\HotelWebApp.csproj", "{E7FDEA8A-4A83-4C9D-A14B-83A7D8B3F3FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
