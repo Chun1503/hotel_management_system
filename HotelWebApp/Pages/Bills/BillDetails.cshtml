@@ -1,0 +1,49 @@
+﻿@page
+@model HotelWebApp.Pages.Bills.BillDetailsModel
+
+@{
+    ViewData["Title"] = "BillDetails";
+}
+
+<h1>BillDetails</h1>
+
+<div>
+    <h4>Bill</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bill.Invoice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bill.Invoice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bill.PaymentDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bill.PaymentDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bill.TotalPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bill.TotalPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bill.IdaccountNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bill.IdaccountNavigation.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bill.IdbookingNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bill.IdbookingNavigation.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Bill.Idbill">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
