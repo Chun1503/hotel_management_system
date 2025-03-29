@@ -1,0 +1,509 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\HotelWebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\HotelWebApp.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\template\\css\\ajax-loader.gif"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\animate.css",
+      "PackagePath": "staticwebassets\\template\\css\\animate.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\bootsnav.css",
+      "PackagePath": "staticwebassets\\template\\css\\bootsnav.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\template\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\flaticon.css",
+      "PackagePath": "staticwebassets\\template\\css\\flaticon.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\template\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\template\\css\\fonts\\slick.eot"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\template\\css\\fonts\\slick.svg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\template\\css\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\template\\css\\fonts\\slick.woff"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\linearicons.css",
+      "PackagePath": "staticwebassets\\template\\css\\linearicons.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\template\\css\\responsive.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\slick-theme.css",
+      "PackagePath": "staticwebassets\\template\\css\\slick-theme.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\slick.css",
+      "PackagePath": "staticwebassets\\template\\css\\slick.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\css\\style.css",
+      "PackagePath": "staticwebassets\\template\\css\\style.css"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\Flaticon.eot"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\template\\fonts\\Flaticon.svg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\Flaticon.ttf"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\Flaticon.woff"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\template\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\Linearicons-Free.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\Linearicons-Free.eot"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\Linearicons-Free.svg",
+      "PackagePath": "staticwebassets\\template\\fonts\\Linearicons-Free.svg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\Linearicons-Free.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\Linearicons-Free.ttf"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\Linearicons-Free.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\Linearicons-Free.woff"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\Linearicons-Free.woff2",
+      "PackagePath": "staticwebassets\\template\\fonts\\Linearicons-Free.woff2"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\template\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\template\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\template\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\template\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\template\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\fonts\\glyphicons-halflings-regular.woff2",
+      "PackagePath": "staticwebassets\\template\\fonts\\glyphicons-halflings-regular.woff2"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\blog\\b1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\b1.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\blog\\b2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\b2.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\blog\\b3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\blog\\b3.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\clients\\c1.png",
+      "PackagePath": "staticwebassets\\template\\images\\clients\\c1.png"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\clients\\c2.png",
+      "PackagePath": "staticwebassets\\template\\images\\clients\\c2.png"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\clients\\c3.png",
+      "PackagePath": "staticwebassets\\template\\images\\clients\\c3.png"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\clients\\c4.png",
+      "PackagePath": "staticwebassets\\template\\images\\clients\\c4.png"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\counter\\counter-banner.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\counter\\counter-banner.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\explore\\e1.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\explore\\e1.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\explore\\e2.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\explore\\e2.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\explore\\e3.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\explore\\e3.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\explore\\e4.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\explore\\e4.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\explore\\e5.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\explore\\e5.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\explore\\e6.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\explore\\e6.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\explore\\person.png",
+      "PackagePath": "staticwebassets\\template\\images\\explore\\person.png"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\images\\welcome-hero\\banner.jpg",
+      "PackagePath": "staticwebassets\\template\\images\\welcome-hero\\banner.jpg"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\img\\controls.png",
+      "PackagePath": "staticwebassets\\template\\img\\controls.png"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\js\\bootsnav.js",
+      "PackagePath": "staticwebassets\\template\\js\\bootsnav.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\js\\custom.js",
+      "PackagePath": "staticwebassets\\template\\js\\custom.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\js\\feather.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\feather.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\js\\jquery.counterup.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\jquery.counterup.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\js\\jquery.js",
+      "PackagePath": "staticwebassets\\template\\js\\jquery.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\js\\slick.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\slick.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\js\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\template\\js\\waypoints.min.js"
+    },
+    {
+      "Id": "E:\\PE\\HotelBooking\\HotelWebApp\\wwwroot\\template\\logo\\favicon.png",
+      "PackagePath": "staticwebassets\\template\\logo\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HotelWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.HotelWebApp.props",
+      "PackagePath": "build\\HotelWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.HotelWebApp.props",
+      "PackagePath": "buildMultiTargeting\\HotelWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.HotelWebApp.props",
+      "PackagePath": "buildTransitive\\HotelWebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

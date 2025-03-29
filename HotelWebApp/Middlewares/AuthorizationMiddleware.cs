@@ -1,27 +1,24 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
+
 namespace HotelWebApp.Middlewares
 {
     public class AuthorizationMiddleware
     {
         private readonly RequestDelegate _next;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AuthorizationMiddleware(RequestDelegate next)
+        public AuthorizationMiddleware(RequestDelegate next, IHttpContextAccessor httpContextAccessor)
         {
             _next = next;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task Invoke(HttpContext context)
         {
             var path = context.Request.Path.ToString().ToLower();
-            var userRole = context.Session.GetString("UserRole");
+            var userRole = _httpContextAccessor.HttpContext?.Session.GetString("UserRole");
 
-            // Nếu chưa đăng nhập, chặn truy cập mọi trang trừ trang đăng nhập
-            if (string.IsNullOrEmpty(userRole) && !path.StartsWith("/account"))
-            {
-                await ShowForbiddenPage(context);
-                return;
-            }
             if (path.StartsWith("/admin") && userRole != "Admin")
             {
                 await ShowForbiddenPage(context);
@@ -39,7 +36,7 @@ namespace HotelWebApp.Middlewares
         private async Task ShowForbiddenPage(HttpContext context)
         {
             context.Response.StatusCode = StatusCodes.Status403Forbidden;
-            context.Response.ContentType = "text/html";
+            context.Response.ContentType = "text/html; charset=utf-8";
             await context.Response.WriteAsync(@"
             <html>
                 <head><title>403 - Forbidden</title></head>

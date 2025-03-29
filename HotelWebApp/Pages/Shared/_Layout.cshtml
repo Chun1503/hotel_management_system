@@ -1,20 +1,104 @@
-﻿<ul class="navbar-nav">
-    @if (Context.Session.GetString("UserName") != null)
-    {
-        <li class="nav-item">
-            <span class="nav-link">Xin chào, @Context.Session.GetString("UserName")!</span>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" asp-page="/Account/Logout">Đăng xuất</a>
-        </li>
-    }
-    else
-    {
-        <li class="nav-item">
-            <a class="nav-link" asp-page="/Account/Login">Đăng nhập</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" asp-page="/Account/Register">Đăng ký</a>
-        </li>
-    }
-</ul>
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Hotel Booking</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/template/css/bootstrap.min.css" asp-append-version="true" />
+
+    <!-- Font Awesome & Icons -->
+    <link rel="stylesheet" href="~/template/css/font-awesome.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/template/css/linearicons.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/template/css/flaticon.css" asp-append-version="true" />
+
+    <!-- Animation & Slick -->
+    <link rel="stylesheet" href="~/template/css/animate.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/template/css/slick.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/template/css/slick-theme.css" asp-append-version="true" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="~/template/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/template/css/responsive.css" asp-append-version="true" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Animate.css for effects -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Hotel Booking</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/booking">Booking</a></li>
+
+                    @{
+                        var userRole = HttpContextAccessor.HttpContext?.Session.GetString("UserRole") ?? "Guest";
+                    }
+
+                    @if (userRole == "Admin")
+                    {
+                        <li class="nav-item"><a class="nav-link" href="/admin">Admin Panel</a></li>
+                    }
+                    else if (userRole == "Manager")
+                    {
+                        <li class="nav-item"><a class="nav-link" href="/manager">Manager Dashboard</a></li>
+                    }
+                    else if (userRole == "User")
+                    {
+                        <li class="nav-item"><a class="nav-link" href="/user">User Profile</a></li>
+                    }
+
+                    @if (userRole == "Guest")
+                    {
+                        <li class="nav-item"><a class="nav-link" href="/account/login">Login</a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-item"><a class="nav-link" href="/account/logout">Logout</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2025 Hotel Booking - All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery (Luôn đặt trước các file JS khác) -->
+    <script src="~/template/js/jquery.js" asp-append-version="true"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/template/js/bootstrap.min.js" asp-append-version="true"></script>
+
+    <!-- Plugins -->
+    <script src="~/template/js/slick.min.js" asp-append-version="true"></script>
+    <script src="~/template/js/waypoints.min.js" asp-append-version="true"></script>
+    <script src="~/template/js/jquery.counterup.min.js" asp-append-version="true"></script>
+    <script src="~/template/js/feather.min.js" asp-append-version="true"></script>
+    <script src="~/template/js/bootsnav.js" asp-append-version="true"></script>
+
+    <!-- Custom Script -->
+    <script src="~/template/js/custom.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

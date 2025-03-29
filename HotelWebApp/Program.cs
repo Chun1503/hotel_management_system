@@ -3,10 +3,14 @@ using HotelDataAccess.DAO;
 using HotelRepositories.IRepository;
 using HotelRepositories.Repository;
 using Microsoft.EntityFrameworkCore;
+using HotelWebApp.Middlewares;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<HotelDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DB")));
@@ -39,7 +43,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseMiddleware<AuthorizationMiddleware>();
+
 
 app.UseRouting();
 app.UseCookiePolicy(new CookiePolicyOptions
@@ -48,6 +52,7 @@ app.UseCookiePolicy(new CookiePolicyOptions
     Secure = CookieSecurePolicy.Always
 });
 app.UseSession();
+app.UseMiddleware<AuthorizationMiddleware>();
 
 app.UseAuthorization();
 

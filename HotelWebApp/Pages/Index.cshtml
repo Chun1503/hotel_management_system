@@ -1,10 +1,488 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Directory Landing Page";
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
+    <title>@ViewData["Title"]</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="~/template/images/favicon.png"/>
+   
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="~/template/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/template/css/linearicons.css">
+    <link rel="stylesheet" href="~/template/css/animate.css">
+    <link rel="stylesheet" href="~/template/css/flaticon.css">
+    <link rel="stylesheet" href="~/template/css/slick.css">
+    <link rel="stylesheet" href="~/template/css/slick-theme.css">
+    <link rel="stylesheet" href="~/template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/template/css/bootsnav.css">	
+    <link rel="stylesheet" href="~/template/css/style.css">
+    <link rel="stylesheet" href="~/template/css/responsive.css">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+	
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    
+    <!-- Header Top -->
+    <header id="header-top" class="header-top">
+        <ul>
+            <li>
+                <div class="header-top-left">
+                    <ul>
+                        <li class="select-opt">
+                            <select name="language" id="language">
+                                <option value="default">EN</option>
+                                <option value="Bangla">BN</option>
+                                <option value="Arabic">AB</option>
+                            </select>
+                        </li>
+                        <li class="select-opt">
+                            <select name="currency" id="currency">
+                                <option value="usd">USD</option>
+                                <option value="euro">Euro</option>
+                                <option value="bdt">BDT</option>
+                            </select>
+                        </li>
+                        <li class="select-opt">
+                            <a href="#"><span class="lnr lnr-magnifier"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="head-responsive-right pull-right">
+                <div class="header-top-right">
+                    <ul>
+                        <li class="header-top-contact">
+                            +1 222 777 6565
+                        </li>
+                        <li class="header-top-contact">
+                            <a asp-page="/Account/Login">sign in</a>
+                        </li>
+                        <li class="header-top-contact">
+                            <a asp-page="/Account/Register">register</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>            
+    </header>
+
+    <!-- Top Area -->
+    <section class="top-area">
+        <div class="header-area">
+            <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" asp-page="/Index">list<span>race</span></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="scroll active"><a href="#home">home</a></li>
+                            <li class="Room"><a asp-page="/User/Room">Room</a></li>
+
+
+                            <li class="scroll"><a href="#explore">explore</a></li>
+                            <li class="scroll"><a href="#reviews">review</a></li>
+                            <li class="scroll"><a href="#blog">blog</a></li>
+                            <li class="scroll"><a href="#contact">contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="clearfix"></div>
+    </section>
+
+    <!-- Welcome Hero -->
+    <section id="home" class="welcome-hero">
+        <div class="container">
+            <div class="welcome-hero-txt">
+                <h2>best place to find and explore <br> that all you need</h2>
+                <p>Find Best Place, Restaurant, Hotel, Real State and many more think in just One click</p>
+            </div>
+            <form method="post" asp-page-handler="Search">
+                <div class="welcome-hero-serch-box">
+                    <div class="welcome-hero-form">
+                        <div class="single-welcome-hero-form">
+                            <h3>what?</h3>
+                            <input asp-for="SearchQuery" type="text" placeholder="Ex: place, restaurant, food, automobile" />
+                            <div class="welcome-hero-form-icon">
+                                <i class="flaticon-list-with-dots"></i>
+                            </div>
+                        </div>
+                        <div class="single-welcome-hero-form">
+                            <h3>location</h3>
+                            <input asp-for="Location" type="text" placeholder="Ex: london, newyork, rome" />
+                            <div class="welcome-hero-form-icon">
+                                <i class="flaticon-gps-fixed-indicator"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome-hero-serch">
+                        <button type="submit" class="welcome-hero-btn">
+                            search <i data-feather="search"></i> 
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- List Topics -->
+    <section id="list-topics" class="list-topics">
+        <div class="container">
+            <div class="list-topics-content">
+                <ul>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <li>
+                            <div class="single-list-topics-content">
+                                <div class="single-list-topics-icon">
+                                    <i class="@category.Icon"></i>
+                                </div>
+                                <h2><a href="#">@category.Name</a></h2>
+                                <p>@category.ListingCount listings</p>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works -->
+    <section id="works" class="works">
+        <div class="container">
+            <div class="section-header">
+                <h2>how it works</h2>
+                <p>Learn More about how our website works</p>
+            </div>
+            <div class="works-content">
+                <div class="row">
+                    @foreach (var feature in Model.Features)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="single-how-works">
+                                <div class="single-how-works-icon">
+                                    <i class="@feature.Icon"></i>
+                                </div>
+                                <h2><a href="#">@Html.Raw(feature.Title)</a></h2>
+                                <p>@feature.Description</p>
+                                <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='@feature.Link'">
+                                    read more
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore -->
+    <section id="explore" class="explore">
+        <div class="container">
+            <div class="section-header">
+                <h2>explore</h2>
+                <p>Explore New place, food, culture around the world and many more</p>
+            </div>
+            <div class="explore-content">
+                <div class="row">
+                    @foreach (var item in Model.ExploreItems)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="single-explore-item">
+                                <div class="single-explore-img">
+                                    <img src="~/template/images/explore/@item.Image" alt="explore image">
+                                    <div class="single-explore-img-info">
+                                        <button onclick="window.location.href='@item.Link'">@item.Tag</button>
+                                        <div class="single-explore-image-icon-box">
+                                            <ul>
+                                                <li>
+                                                    <div class="single-explore-image-icon">
+                                                        <i class="fa fa-arrows-alt"></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="single-explore-image-icon">
+                                                        <i class="fa fa-bookmark-o"></i>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-explore-txt bg-theme-@item.Theme">
+                                    <h2><a href="@item.Link">@item.Title</a></h2>
+                                    <p class="explore-rating-price">
+                                        <span class="explore-rating">@item.Rating</span>
+                                        <a href="#"> @item.RatingCount ratings</a> 
+                                        <span class="explore-price-box">
+                                            form
+                                            <span class="explore-price">@item.PriceRange</span>
+                                        </span>
+                                        <a href="#">@item.Category</a>
+                                    </p>
+                                    <div class="explore-person">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <div class="explore-person-img">
+                                                    <a href="#">
+                                                        <img src="~/template/images/explore/person.png" alt="explore person">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <p>@item.Description</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="explore-open-close-part">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <button class="@(item.IsOpen ? "open-btn" : "close-btn")" onclick="window.location.href='@item.Link'">
+                                                    @(item.IsOpen ? "open now" : "close now")
+                                                </button>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <div class="explore-map-icon">
+                                                    <a href="#"><i data-feather="map-pin"></i></a>
+                                                    <a href="#"><i data-feather="upload"></i></a>
+                                                    <a href="#"><i data-feather="heart"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="reviews">
+        <div class="section-header">
+            <h2>clients reviews</h2>
+            <p>What our client say about us</p>
+        </div>
+        <div class="reviews-content">
+            <div class="testimonial-carousel">
+                @foreach (var review in Model.Testimonials)
+                {
+                    <div class="single-testimonial-box">
+                        <div class="testimonial-description">
+                            <div class="testimonial-info">
+                                <div class="testimonial-img">
+                                    <img src="~/template/images/clients/@review.Image" alt="clients">
+                                </div>
+                                <div class="testimonial-person">
+                                    <h2>@review.Name</h2>
+                                    <h4>@review.Location</h4>
+                                    <div class="testimonial-person-star">
+                                        @for (int i = 0; i < review.Rating; i++)
+                                        {
+                                            <i class="fa fa-star"></i>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-comment">
+                                <p>@review.Comment</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section id="statistics" class="statistics">
+        <div class="container">
+            <div class="statistics-counter"> 
+                @foreach (var stat in Model.Statistics)
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-ststistics-box">
+                            <div class="statistics-content">
+                                <div class="counter">@stat.Value</div> <span>@stat.Unit</span>
+                            </div>
+                            <h3>@stat.Label</h3>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>news and articles</h2>
+                <p>Always upto date with our latest News and Articles</p>
+            </div>
+            <div class="blog-content">
+                <div class="row">
+                    @foreach (var post in Model.BlogPosts)
+                    {
+                        <div class="col-md-4 col-sm-6">
+                            <div class="single-blog-item">
+                                <div class="single-blog-item-img">
+                                    <img src="~/template/images/blog/@post.Image" alt="blog image">
+                                </div>
+                                <div class="single-blog-item-txt">
+                                    <h2><a href="@post.Link">@post.Title</a></h2>
+                                    <h4>posted <span>by</span> <a href="#">@post.Author</a> @post.Date</h4>
+                                    <p>@post.Summary</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription -->
+    <section id="contact" class="subscription">
+        <div class="container">
+            <div class="subscribe-title text-center">
+                <h2>do you want to add your business listing with us?</h2>
+                <p>Listrace offer you to list your business with us and we very much able to promote your Business.</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="subscription-input-group">
+                        <form method="post" asp-page-handler="Subscribe">
+                            <input asp-for="SubscribeEmail" type="email" class="subscription-input-form" placeholder="Enter your email here">
+                            <button type="submit" class="appsLand-btn subscribe-btn">
+                                creat account
+                            </button>
+                        </form>
+                    </div>
+                </div>	
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-menu">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" asp-page="/Index">list<span>race</span></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <ul class="footer-menu-item">
+                            <li class="scroll"><a href="#works">how it works</a></li>
+                            <li class="scroll"><a href="#explore">explore</a></li>
+                            <li class="scroll"><a href="#reviews">review</a></li>
+                            <li class="scroll"><a href="#blog">blog</a></li>
+                            <li class="scroll"><a href="#contact">contact</a></li>
+                            <li class="scroll"><a href="#contact">my account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="hm-footer-copyright">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <p>&copy;copyright. designed and developed by <a href="https://www.themesine.com/">themesine</a></p>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="footer-social">
+                            <span><i class="fa fa-phone"> +1 (222) 777 8888</i></span>
+                            <a href="#"><i class="fa fa-facebook"></i></a>	
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="scroll-Top">
+            <div class="return-to-top">
+                <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="~/template/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="~/template/js/bootstrap.min.js"></script>
+    <script src="~/template/js/bootsnav.js"></script>
+    <script src="~/template/js/feather.min.js"></script>
+    <script src="~/template/js/jquery.counterup.min.js"></script>
+    <script src="~/template/js/waypoints.min.js"></script>
+    <script src="~/template/js/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="~/template/js/custom.js"></script>
+
+    @section Scripts {
+        <script>
+            $(document).ready(function() {
+                // Initialize feather icons
+                feather.replace();
+                
+                // Counter animation
+                $('.counter').counterUp({
+                    delay: 10,
+                    time: 1000
+                });
+                
+                // Initialize testimonial carousel
+                $('.testimonial-carousel').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    adaptiveHeight: true
+                });
+
+                // Scroll to top button
+                $('#scroll-Top').click(function() {
+                    $("html, body").animate({
+                        scrollTop: 0
+                    }, 500);
+                    return false;
+                });
+            });
+        </script>
+    }
+</body>
+</html>

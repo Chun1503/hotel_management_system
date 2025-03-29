@@ -7,9 +7,9 @@ E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.GeneratedMSBuild
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.AssemblyInfoInputs.cache
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.AssemblyInfo.cs
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.csproj.CoreCompileInputs.cache
+E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.sourcelink.json
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.dll
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\refint\HotelBusiness.dll
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.pdb
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.genruntimeconfig.cache
 E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\ref\HotelBusiness.dll
-E:\PE\HotelBooking\HotelBusiness\obj\Debug\net8.0\HotelBusiness.sourcelink.json
