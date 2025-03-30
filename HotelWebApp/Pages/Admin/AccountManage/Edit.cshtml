@@ -1,0 +1,85 @@
+﻿@page
+@model HotelWebApp.Pages.Admin.AccountManage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Account.Idaccount" />
+            <div class="form-group">
+                <label asp-for="Account.Name" class="control-label"></label>
+                <input asp-for="Account.Name" class="form-control" />
+                <span asp-validation-for="Account.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.UserName" class="control-label"></label>
+                <input asp-for="Account.UserName" class="form-control" />
+                <span asp-validation-for="Account.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.PassWord" class="control-label"></label>
+                <input asp-for="Account.PassWord" class="form-control" />
+                <span asp-validation-for="Account.PassWord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Gender" class="control-label"></label>
+                <input asp-for="Account.Gender" class="form-control" />
+                <span asp-validation-for="Account.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.PhoneNumber" class="control-label"></label>
+                <input asp-for="Account.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Account.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Idemail" class="control-label"></label>
+                <input asp-for="Account.Idemail" class="form-control" />
+                <span asp-validation-for="Account.Idemail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Idfacebook" class="control-label"></label>
+                <input asp-for="Account.Idfacebook" class="form-control" />
+                <span asp-validation-for="Account.Idfacebook" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Bank" class="control-label"></label>
+                <input asp-for="Account.Bank" class="form-control" />
+                <span asp-validation-for="Account.Bank" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.BankNumber" class="control-label"></label>
+                <input asp-for="Account.BankNumber" class="form-control" />
+                <span asp-validation-for="Account.BankNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Role" class="control-label"></label>
+                <input asp-for="Account.Role" class="form-control" />
+                <span asp-validation-for="Account.Role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Status" class="control-label"></label>
+                <input asp-for="Account.Status" class="form-control" />
+                <span asp-validation-for="Account.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

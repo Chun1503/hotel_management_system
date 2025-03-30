@@ -7,18 +7,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using HotelBusiness.Models;
 
-namespace HotelWebApp.Pages.Bills
+namespace HotelWebApp.Pages.Admin.AccountManage
 {
-    public class BillDetailsModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly HotelBusiness.Models.HotelDbContext _context;
 
-        public BillDetailsModel(HotelBusiness.Models.HotelDbContext context)
+        public DetailsModel(HotelBusiness.Models.HotelDbContext context)
         {
             _context = context;
         }
 
-        public Bill Bill { get; set; } = default!;
+        public HotelBusiness.Models.Account Account { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,14 +27,14 @@ namespace HotelWebApp.Pages.Bills
                 return NotFound();
             }
 
-            var bill = await _context.Bills.FirstOrDefaultAsync(m => m.Idbill == id);
-            if (bill == null)
+            var account = await _context.Accounts.FirstOrDefaultAsync(m => m.Idaccount == id);
+            if (account == null)
             {
                 return NotFound();
             }
             else
             {
-                Bill = bill;
+                Account = account;
             }
             return Page();
         }

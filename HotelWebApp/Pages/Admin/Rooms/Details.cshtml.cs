@@ -7,18 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using HotelBusiness.Models;
 
-namespace HotelWebApp.Pages.Rooms
+namespace HotelWebApp.Pages.Admin.Rooms
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly HotelBusiness.Models.HotelDbContext _context;
 
-        public DeleteModel(HotelBusiness.Models.HotelDbContext context)
+        public DetailsModel(HotelBusiness.Models.HotelDbContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
         public Room Room { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -29,7 +28,6 @@ namespace HotelWebApp.Pages.Rooms
             }
 
             var room = await _context.Rooms.FirstOrDefaultAsync(m => m.Idroom == id);
-
             if (room == null)
             {
                 return NotFound();
@@ -39,24 +37,6 @@ namespace HotelWebApp.Pages.Rooms
                 Room = room;
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var room = await _context.Rooms.FindAsync(id);
-            if (room != null)
-            {
-                Room = room;
-                _context.Rooms.Remove(Room);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
         }
     }
 }

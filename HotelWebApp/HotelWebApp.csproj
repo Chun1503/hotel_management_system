@@ -7,16 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\Admin\**" />
     <Compile Remove="Pages\Manager\**" />
     <Compile Remove="Pages\User\**" />
-    <Content Remove="Pages\Admin\**" />
     <Content Remove="Pages\Manager\**" />
     <Content Remove="Pages\User\**" />
-    <EmbeddedResource Remove="Pages\Admin\**" />
     <EmbeddedResource Remove="Pages\Manager\**" />
     <EmbeddedResource Remove="Pages\User\**" />
-    <None Remove="Pages\Admin\**" />
     <None Remove="Pages\Manager\**" />
     <None Remove="Pages\User\**" />
   </ItemGroup>

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HotelBusiness.Models;
 
-namespace HotelWebApp.Pages.Rooms
+namespace HotelWebApp.Pages.Admin.AccountManage
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace HotelWebApp.Pages.Rooms
         }
 
         [BindProperty]
-        public Room Room { get; set; } = default!;
+        public HotelBusiness.Models.Account Account { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,13 +29,12 @@ namespace HotelWebApp.Pages.Rooms
                 return NotFound();
             }
 
-            var room =  await _context.Rooms.FirstOrDefaultAsync(m => m.Idroom == id);
-            if (room == null)
+            var account =  await _context.Accounts.FirstOrDefaultAsync(m => m.Idaccount == id);
+            if (account == null)
             {
                 return NotFound();
             }
-            Room = room;
-           ViewData["IdroomType"] = new SelectList(_context.RoomTypes, "IdroomType", "TypeName");
+            Account = account;
             return Page();
         }
 
@@ -48,7 +47,7 @@ namespace HotelWebApp.Pages.Rooms
                 return Page();
             }
 
-            _context.Attach(Room).State = EntityState.Modified;
+            _context.Attach(Account).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +55,7 @@ namespace HotelWebApp.Pages.Rooms
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RoomExists(Room.Idroom))
+                if (!AccountExists(Account.Idaccount))
                 {
                     return NotFound();
                 }
@@ -69,9 +68,9 @@ namespace HotelWebApp.Pages.Rooms
             return RedirectToPage("./Index");
         }
 
-        private bool RoomExists(int id)
+        private bool AccountExists(int id)
         {
-            return _context.Rooms.Any(e => e.Idroom == id);
+            return _context.Accounts.Any(e => e.Idaccount == id);
         }
     }
 }

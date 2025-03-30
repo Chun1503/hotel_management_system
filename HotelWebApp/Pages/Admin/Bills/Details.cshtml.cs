@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using HotelBusiness.Models;
 
-namespace HotelWebApp.Pages.Rooms
+namespace HotelWebApp.Pages.Admin.Bills
 {
     public class DetailsModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace HotelWebApp.Pages.Rooms
             _context = context;
         }
 
-        public Room Room { get; set; } = default!;
+        public Bill Bill { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,14 +27,14 @@ namespace HotelWebApp.Pages.Rooms
                 return NotFound();
             }
 
-            var room = await _context.Rooms.FirstOrDefaultAsync(m => m.Idroom == id);
-            if (room == null)
+            var bill = await _context.Bills.FirstOrDefaultAsync(m => m.Idbill == id);
+            if (bill == null)
             {
                 return NotFound();
             }
             else
             {
-                Room = room;
+                Bill = bill;
             }
             return Page();
         }

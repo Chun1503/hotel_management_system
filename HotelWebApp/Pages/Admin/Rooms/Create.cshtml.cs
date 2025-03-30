@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using HotelBusiness.Models;
 
-namespace HotelWebApp.Pages.Rooms
+namespace HotelWebApp.Pages.Admin.Rooms
 {
     public class CreateModel : PageModel
     {
