@@ -73,16 +73,24 @@
             <li class="head-responsive-right pull-right">
                 <div class="header-top-right">
                     <ul>
-                        <li class="header-top-contact">
-                            +1 222 777 6565
-                        </li>
-                        <li class="header-top-contact">
-                            <a asp-page="/Account/Login">sign in</a>
-                        </li>
-                        <li class="header-top-contact">
-                            <a asp-page="/Account/Register">register</a>
-                        </li>
-                    </ul>
+                        @if (HttpContext.Session.GetString("UserName") != null)
+                        {
+                            <li class="header-top-contact">
+                                @HttpContext.Session.GetString("UserName")
+                            </li>
+                            <li class="header-top-contact">
+                                <a asp-page-handler="Logout">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="header-top-contact">
+                                <a asp-page="/Account/Login">sign in</a>
+                            </li>
+                            <li class="header-top-contact">
+                                <a asp-page="/Account/Register">register</a>
+                            </li>
+                        }
                 </div>
             </li>
         </ul>            

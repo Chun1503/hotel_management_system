@@ -1,11 +1,6 @@
 ﻿using HotelBusiness.Models;
 using HotelDataAccess.DAO;
 using HotelRepositories.IRepository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelRepositories.Repository
 {
@@ -29,6 +24,36 @@ namespace HotelRepositories.Repository
         public Task<bool> RegisterAsync(Account account)
         {
             return _accountDAO.RegisterAsync(account);
+        }
+        public Task<bool> UpdateProfileAsync(int id, string name, string phone)
+        {
+            return _accountDAO.UpdateProfileAsync(id, name, phone);
+        }
+        public Task<bool> UpdateAccountStatusAsync(int id, string status)
+        {
+            return _accountDAO.UpdateAccountStatusAsync(id, status);
+        }
+
+        public Task<Account?> GetAccountByEmailAsync(string email)
+        {
+            return _accountDAO.GetAccountByEmailAsync(email);
+        }
+        public string GenerateOtpCode()
+        {
+            return _accountDAO.GenerateOtpCode();
+        }
+        public Task SendOtpEmailAsync(string email, string otpCode)
+        {
+            return _accountDAO.SendOtpEmailAsync(email, otpCode);
+        }
+        public Task<Account?> GetAccountByUsernameEmailAsync(string username)
+        {
+            return _accountDAO.GetAccountByUsernameEmailAsync(username);
+        }
+
+        public Task<bool> ResetPasswordAsync(string email, string newPassword)
+        {
+            return _accountDAO.ResetPasswordAsync(email, newPassword);
         }
     }
 }

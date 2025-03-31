@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace HotelWebApp.Pages.Admin.Rooms
 {
-    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly HotelBusiness.Models.HotelDbContext _context;

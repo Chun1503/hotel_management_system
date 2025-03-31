@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace HotelWebApp.Pages
 {
@@ -53,7 +54,17 @@ namespace HotelWebApp.Pages
             TempData["SubscribeSuccess"] = "Thank you for subscribing!";
             return RedirectToPage();
         }
+        public async Task<IActionResult> OnGetLogoutAsync()
+        {
+            // Clear the session
+            HttpContext.Session.Clear();
 
+            // Sign out the user
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Redirect to the index page
+            return RedirectToPage("/Index");
+        }
         private void InitializeData()
         {
             // Sample data initialization
