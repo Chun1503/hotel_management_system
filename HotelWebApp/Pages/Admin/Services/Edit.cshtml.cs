@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HotelBusiness.Models;
 
-namespace HotelWebApp.Pages.Admin.AccountManage
+namespace HotelWebApp.Pages.Admin.Services
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace HotelWebApp.Pages.Admin.AccountManage
         }
 
         [BindProperty]
-        public Account Account { get; set; } = default!;
+        public Service Service { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,12 +29,12 @@ namespace HotelWebApp.Pages.Admin.AccountManage
                 return NotFound();
             }
 
-            var account =  await _context.Accounts.FirstOrDefaultAsync(m => m.Idaccount == id);
-            if (account == null)
+            var service =  await _context.Services.FirstOrDefaultAsync(m => m.Idservice == id);
+            if (service == null)
             {
                 return NotFound();
             }
-            Account = account;
+            Service = service;
             return Page();
         }
 
@@ -47,7 +47,7 @@ namespace HotelWebApp.Pages.Admin.AccountManage
                 return Page();
             }
 
-            _context.Attach(Account).State = EntityState.Modified;
+            _context.Attach(Service).State = EntityState.Modified;
 
             try
             {
@@ -55,7 +55,7 @@ namespace HotelWebApp.Pages.Admin.AccountManage
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(Account.Idaccount))
+                if (!ServiceExists(Service.Idservice))
                 {
                     return NotFound();
                 }
@@ -68,9 +68,9 @@ namespace HotelWebApp.Pages.Admin.AccountManage
             return RedirectToPage("./Index");
         }
 
-        private bool AccountExists(int id)
+        private bool ServiceExists(int id)
         {
-            return _context.Accounts.Any(e => e.Idaccount == id);
+            return _context.Services.Any(e => e.Idservice == id);
         }
     }
 }

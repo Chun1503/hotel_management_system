@@ -9,15 +9,16 @@ using HotelBusiness.Models;
 
 namespace HotelWebApp.Pages.Admin.AccountManage
 {
-    public class DetailsModel : PageModel
+    public class DeleteModel : PageModel
     {
         private readonly HotelBusiness.Models.HotelDbContext _context;
 
-        public DetailsModel(HotelBusiness.Models.HotelDbContext context)
+        public DeleteModel(HotelBusiness.Models.HotelDbContext context)
         {
             _context = context;
         }
 
+        [BindProperty]
         public Account Account { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -28,6 +29,7 @@ namespace HotelWebApp.Pages.Admin.AccountManage
             }
 
             var account = await _context.Accounts.FirstOrDefaultAsync(m => m.Idaccount == id);
+
             if (account == null)
             {
                 return NotFound();
@@ -37,6 +39,24 @@ namespace HotelWebApp.Pages.Admin.AccountManage
                 Account = account;
             }
             return Page();
+        }
+
+        public async Task<IActionResult> OnPostAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var account = await _context.Accounts.FindAsync(id);
+            if (account != null)
+            {
+                Account = account;
+                _context.Accounts.Remove(Account);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToPage("./Index");
         }
     }
 }

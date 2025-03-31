@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using HotelBusiness.Models;
 
-namespace HotelWebApp.Pages.Admin.AccountManage
+namespace HotelWebApp.Pages.Admin.Services
 {
     public class IndexModel : PageModel
     {
@@ -18,11 +18,11 @@ namespace HotelWebApp.Pages.Admin.AccountManage
             _context = context;
         }
 
-        public IList<Account> Account { get;set; } = default!;
+        public IList<Service> Service { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Account = await _context.Accounts.ToListAsync();
+            Service = await _context.Services.ToListAsync();
         }
     }
 }

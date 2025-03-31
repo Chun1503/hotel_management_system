@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using HotelBusiness.Models;
 
-namespace HotelWebApp.Pages.Admin.AccountManage
+namespace HotelWebApp.Pages.Admin.Services
 {
     public class DetailsModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace HotelWebApp.Pages.Admin.AccountManage
             _context = context;
         }
 
-        public Account Account { get; set; } = default!;
+        public Service Service { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,14 +27,14 @@ namespace HotelWebApp.Pages.Admin.AccountManage
                 return NotFound();
             }
 
-            var account = await _context.Accounts.FirstOrDefaultAsync(m => m.Idaccount == id);
-            if (account == null)
+            var service = await _context.Services.FirstOrDefaultAsync(m => m.Idservice == id);
+            if (service == null)
             {
                 return NotFound();
             }
             else
             {
-                Account = account;
+                Service = service;
             }
             return Page();
         }
