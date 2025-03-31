@@ -18,7 +18,7 @@ namespace HotelWebApp.Pages.Admin.AccountManage
             _context = context;
         }
 
-        public Account Account { get; set; } = default!;
+        public HotelBusiness.Models.Account Account { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

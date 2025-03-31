@@ -19,7 +19,7 @@ namespace HotelWebApp.Pages.Admin.AccountManage
         }
 
         [BindProperty]
-        public Account Account { get; set; } = default!;
+        public HotelBusiness.Models.Account Account { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
