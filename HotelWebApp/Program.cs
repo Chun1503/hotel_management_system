@@ -37,9 +37,21 @@ builder.Services.AddSession(opt =>
 });
 builder.Services.AddScoped<AccountDAO>();
 builder.Services.AddScoped<RoomDAO>();
+builder.Services.AddScoped<RoomTypeDAO>();
+builder.Services.AddScoped<BookingDAO>();
+builder.Services.AddScoped<ServiceBookingDAO>();
+builder.Services.AddScoped<ServiceDAO>();
+builder.Services.AddScoped<BillDAO>();
+
 
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+builder.Services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
+builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
+builder.Services.AddScoped<IBillRepository, BillRepository>();
+builder.Services.AddScoped<IServiceBookingRepository, ServiceBookingRepository>();
+
 
 // Configure mail service
 builder.Services.AddOptions();

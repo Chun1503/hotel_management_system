@@ -1,0 +1,204 @@
+﻿@page
+@model HotelWebApp.Pages.User.ProfileModel
+@{
+    ViewData["Title"] = "Profile";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-container {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-box {
+            background: rgba(255, 255, 255, 0.93);
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-title {
+            color: #dc3545;
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+            .profile-title:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 3px;
+                background: #dc3545;
+            }
+
+        .form-control {
+            height: 45px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding-left: 15px;
+        }
+
+            .form-control:focus {
+                box-shadow: none;
+                border-color: #dc3545;
+            }
+
+            .form-control[readonly] {
+                background-color: #f8f9fa;
+            }
+
+        .btn-save {
+            background: #dc3545;
+            border: none;
+            height: 45px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+            .btn-save:hover {
+                background: #c82333;
+                transform: translateY(-2px);
+            }
+
+        .input-group-text {
+            background: #dc3545;
+            color: white;
+            border: none;
+            width: 45px;
+justify-content: center;
+        }
+
+        .alert-success {
+            background: rgba(40, 167, 69, 0.1);
+            border-color: #28a745;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="profile-box">
+            <h1 class="profile-title">USER PROFILE</h1>
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success mb-4">
+                    <i class="fas fa-check-circle me-2"></i> @TempData["SuccessMessage"]
+                </div>
+            }
+
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <label asp-for="Account.Name" class="form-label fw-semibold">Full Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input asp-for="Account.Name" class="form-control" placeholder="Enter your name" />
+                        </div>
+                        <span asp-validation-for="Account.Name" class="text-danger small mt-1 d-block"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <label asp-for="Account.UserName" class="form-label fw-semibold">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-at"></i></span>
+                            <input asp-for="Account.UserName" class="form-control" readonly />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <label asp-for="Account.Gender" class="form-label fw-semibold">Gender</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
+                            <select asp-for="Account.Gender" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <label asp-for="Account.PhoneNumber" class="form-label fw-semibold">Phone Number</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            <input asp-for="Account.PhoneNumber" class="form-control" placeholder="Enter phone number" />
+                        </div>
+                        <span asp-validation-for="Account.PhoneNumber" class="text-danger small mt-1 d-block"></span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Account.Idemail" class="form-label fw-semibold">Email Address</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input asp-for="Account.Idemail" class="form-control" readonly />
+                    </div>
+                </div>
+                <a asp-page="@(Model.Account?.Role switch {
+        "Admin" => "/Admin/Dashboard",
+        "Manager" => "/Manager/Home",
+        _ => "/Index"
+    })"
+                   class="back-link">
+                    <i class="fas fa-arrow-left me-2"></i>
+                    @(Model.Account?.Role switch
+                    {
+                        "Admin" => "Back to Admin Dashboard",
+                        "Manager" => "Back to Manager Home",
+                        _ => "Back to Home"
+                    })
+                </a>
+
+                <button type="submit" class="btn btn-save mt-3">
+                    <i class="fas fa-save me-2"></i>SAVE CHANGES
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>
