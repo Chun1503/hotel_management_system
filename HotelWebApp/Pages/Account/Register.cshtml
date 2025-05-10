@@ -1,0 +1,107 @@
+﻿@page
+@model HotelWebApp.Pages.Account.RegisterModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Đăng Ký";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card shadow-lg p-4 animated fadeIn" style="width: 400px; border-radius: 12px;">
+        <h3 class="text-center text-primary fw-bold">Đăng Ký</h3>
+        <hr />
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <p class="mb-1">@error.ErrorMessage</p>
+                }
+            </div>
+        }
+
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Tên đầy đủ</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="fas fa-user"></i></span>
+                    <input asp-for="Input.FullName" class="form-control" placeholder="Nhập tên đầy đủ" />
+                </div>
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Tên đăng nhập</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="fas fa-user"></i></span>
+                    <input asp-for="Input.Username" class="form-control" placeholder="Nhập tên đăng nhập" />
+                </div>
+                <span asp-validation-for="Input.Username" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Email</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="fas fa-envelope"></i></span>
+                    <input asp-for="Input.Email" class="form-control" placeholder="Nhập email" />
+                </div>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Mật khẩu</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="fas fa-lock"></i></span>
+                    <input asp-for="Input.Password" type="password" class="form-control" placeholder="Nhập mật khẩu" />
+                </div>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Xác nhận mật khẩu</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="fas fa-lock"></i></span>
+                    <input asp-for="Input.ConfirmPassword" type="password" class="form-control" placeholder="Nhập lại mật khẩu" />
+                </div>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Giới tính</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="fas fa-venus-mars"></i></span>
+                    <div class="form-check form-check-inline">
+                        <input asp-for="Input.Gender" class="form-check-input" type="radio" value="Male" id="genderMale" />
+                        <label class="form-check-label" for="genderMale">Nam</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input asp-for="Input.Gender" class="form-check-input" type="radio" value="Female" id="genderFemale" />
+                        <label class="form-check-label" for="genderFemale">Nữ</label>
+                    </div>
+                </div>
+                <span asp-validation-for="Input.Gender" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Số điện thoại</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="fas fa-phone"></i></span>
+                    <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Nhập số điện thoại" />
+                </div>
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 fw-semibold" style="border-radius: 8px; transition: 0.3s;">
+                <i class="fas fa-user-plus"></i> Đăng ký
+            </button>
+
+            <div class="mt-3 text-center">
+                <a href="/account/login" class="text-decoration-none">Đã có tài khoản? <b>Đăng nhập ngay</b></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

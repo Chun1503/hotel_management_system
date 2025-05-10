@@ -29,8 +29,15 @@ public partial class Booking
     [StringLength(50)]
     public string Status { get; set; } = null!;
 
-    [StringLength(500)]
+    [StringLength(255)]
     public string? Note { get; set; }
+
+    [StringLength(100)]
+    public string? CustomerName { get; set; }
+
+    [StringLength(20)]
+    [Unicode(false)]
+    public string? CustomerPhone { get; set; }
 
     [InverseProperty("IdbookingNavigation")]
     public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();

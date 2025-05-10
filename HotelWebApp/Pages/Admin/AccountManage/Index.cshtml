@@ -1,0 +1,93 @@
+﻿@page
+@model HotelWebApp.Pages.Admin.AccountManage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].PassWord)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Idemail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Idfacebook)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Bank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].BankNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Account) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassWord)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idfacebook)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Idaccount">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Idaccount">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Idaccount">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

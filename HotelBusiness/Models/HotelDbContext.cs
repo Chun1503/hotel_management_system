@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace HotelBusiness.Models;
 
@@ -31,14 +30,10 @@ public partial class HotelDbContext : DbContext
     public virtual DbSet<ServiceBooking> ServiceBookings { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-            optionsBuilder.UseSqlServer(config.GetConnectionString("DB"));
-        }
-    }
-protected override void OnModelCreating(ModelBuilder modelBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=MSI;Initial Catalog=HotelBooking;User ID=sa;Password=HappyWheels2468;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Account>(entity =>
         {
@@ -61,6 +56,8 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         modelBuilder.Entity<Booking>(entity =>
         {
             entity.HasKey(e => e.Idbooking).HasName("PK__Booking__B20896CF78F1EF59");
+
+            entity.Property(e => e.Note).UseCollation("Vietnamese_CI_AS");
 
             entity.HasOne(d => d.IdaccountNavigation).WithMany(p => p.Bookings)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -88,6 +85,8 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         modelBuilder.Entity<Service>(entity =>
         {
             entity.HasKey(e => e.Idservice).HasName("PK__Service__5049E73A8C83660D");
+
+            entity.Property(e => e.Name).UseCollation("Vietnamese_CI_AS");
         });
 
         modelBuilder.Entity<ServiceBooking>(entity =>

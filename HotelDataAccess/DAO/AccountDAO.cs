@@ -1,21 +1,17 @@
 ﻿using HotelBusiness.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelDataAccess.DAO
 {
     public class AccountDAO
     {
         private readonly HotelDbContext _context;
+        private readonly SendMailService _sendMailService;
 
-        public AccountDAO(HotelDbContext context)
+        public AccountDAO(HotelDbContext context, SendMailService sendMailService)
         {
             _context = context;
+            _sendMailService = sendMailService;
         }
 
         // Đăng ký
@@ -65,11 +61,58 @@ namespace HotelDataAccess.DAO
             var account = await _context.Accounts.FindAsync(id);
             if (account == null || !BCrypt.Net.BCrypt.Verify(oldPassword, account.PassWord))
                 return false;
-                
+
             account.PassWord = BCrypt.Net.BCrypt.HashPassword(newPassword);
             await _context.SaveChangesAsync();
             return true;
         }
 
+        // Cập nhật trạng thái
+        public async Task<bool> UpdateAccountStatusAsync(int id, string status)
+        {
+            var account = await _context.Accounts.FindAsync(id);
+            if (account == null) return false;
+
+            account.Status = status;
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        // Get account by email
+        public async Task<Account?> GetAccountByEmailAsync(string email)
+        {
+            return await _context.Accounts.FirstOrDefaultAsync(a => a.Idemail == email);
+        }
+
+        // Generate OTP code
+        public string GenerateOtpCode()
+        {
+            var random = new Random();
+            return random.Next(100000, 999999).ToString();
+        }
+
+        // Send OTP email
+        public async Task SendOtpEmailAsync(string email, string otpCode)
+        {
+            var subject = "OTP Verification";
+            var htmlMessage = $"Your OTP code is {otpCode}";
+
+            await _sendMailService.SendEmailAsync(email, subject, htmlMessage);
+        }
+        public async Task<Account?> GetAccountByUsernameEmailAsync(string username)
+        {
+            return await _context.Accounts
+                .FirstOrDefaultAsync(a => a.Idemail == username || a.UserName == username);
+        }
+        // Reset mật khẩu
+        public async Task<bool> ResetPasswordAsync(string email, string newPassword)
+        {
+            var account = await _context.Accounts.FirstOrDefaultAsync(a => a.Idemail == email);
+            if (account == null) return false;
+
+            account.PassWord = BCrypt.Net.BCrypt.HashPassword(newPassword);
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }

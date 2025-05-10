@@ -1,0 +1,381 @@
+﻿@page
+@model HotelWebApp.Pages.User.DetailsModel
+@{
+    ViewData["Title"] = "Chi tiết phòng";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <!-- Reuse header từ trang Room.cshtml -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/template/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/template/css/linearicons.css">
+    <link rel="stylesheet" href="~/template/css/animate.css">
+    <link rel="stylesheet" href="~/template/css/flaticon.css">
+    <link rel="stylesheet" href="~/template/css/slick.css">
+    <link rel="stylesheet" href="~/template/css/slick-theme.css">
+    <link rel="stylesheet" href="~/template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/template/css/bootsnav.css">
+    <link rel="stylesheet" href="~/template/css/style.css">
+    <link rel="stylesheet" href="~/template/css/responsive.css">
+    <style>
+        .room-detail-container {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .room-gallery {
+            margin-bottom: 30px;
+        }
+
+        .main-image {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+            .thumbnail.active {
+                border-color: #3498db;
+            }
+
+        .amenities-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+            .amenities-list li {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+        .similar-room-card {
+            transition: transform 0.3s;
+        }
+
+            .similar-room-card:hover {
+                transform: translateY(-5px);
+            }
+    </style>
+</head>
+
+<body>
+    <!-- Reuse header từ trang Room.cshtml -->
+    <header id="header-top" class="header-top">
+        <ul>
+            <li>
+                <div class="header-top-left">
+                    <ul>
+                        <li class="select-opt">
+                            <select name="language" id="language">
+                                <option value="default">EN</option>
+                                <option value="Bangla">BN</option>
+                                <option value="Arabic">AB</option>
+                            </select>
+                        </li>
+                        <li class="select-opt">
+                            <select name="currency" id="currency">
+                                <option value="usd">USD</option>
+                                <option value="euro">Euro</option>
+                                <option value="bdt">BDT</option>
+                            </select>
+                        </li>
+                        <li class="select-opt">
+                            <a href="#"><span class="lnr lnr-magnifier"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="head-responsive-right pull-right">
+                <div class="header-top-right">
+                    <ul>
+                        <li class="header-top-contact">
+                            +1 222 777 6565
+                        </li>
+                        @if (HttpContext.Session.GetString("UserName") != null)
+                        {
+                            <li class="header-top-contact dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Welcome, @HttpContext.Session.GetString("UserName") <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a asp-page="/User/Profile">Profile</a></li>
+                                    <li> <a asp-page-handler="Logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="header-top-contact">
+                                <a asp-page="/Account/Login">sign in</a>
+                            </li>
+                            <li class="header-top-contact">
+                                <a asp-page="/Account/Register">register</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </header>
+
+    <!-- Top Area -->
+    <section class="top-area">
+        <div class="header-area">
+            <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" asp-page="/Index">Hotel<span>Booking</span></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="Home"><a asp-page="/Index">Home</a></li>
+                            <li class="active"><a asp-page="/User/Room">Phòng</a></li>
+                            <li class="scroll"><a href="#contact">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="clearfix"></div>
+    </section>
+
+    <div class="container room-detail-container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Gallery -->
+                <div class="room-gallery">
+                    <img id="mainImage" src="@Model.Room.Image" alt="@Model.Room.Name" class="main-image">
+
+                    <div class="thumbnail-container">
+                        <!-- Thêm các thumbnail ảnh khác của phòng -->
+                        <img src="@Model.Room.Image" class="thumbnail active" onclick="changeImage(this)">
+                        <img src="/images/rooms/room-interior.jpg" class="thumbnail" onclick="changeImage(this)">
+                        <img src="/images/rooms/room-bathroom.jpg" class="thumbnail" onclick="changeImage(this)">
+                    </div>
+                </div>
+
+                <!-- Room Info -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">@Model.Room.Name</h2>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-primary me-2">@Model.Room.IdroomTypeNavigation?.TypeName</span>
+                            <span class="badge bg-success">@Model.Room.Status</span>
+                        </div>
+
+                        <h4 class="text-danger mb-4">@Model.Room.Price.ToString("N0") VND/đêm</h4>
+
+                        <h5><i class="fas fa-info-circle me-2"></i>Mô tả</h5>
+                        <p class="card-text">Phòng tiện nghi hiện đại, không gian thoải mái, đầy đủ tiện nghi với giường ngủ êm ái, phòng tắm riêng và các dịch vụ cao cấp.</p>
+                        <h5 class="mt-4"><i class="fas fa-list-check me-2"></i>Tiện nghi</h5>
+                        <ul class="amenities-list">
+                            <li><i class="fas fa-wifi text-primary"></i> Wifi miễn phí</li>
+                            <li><i class="fas fa-tv text-primary"></i> TV màn hình phẳng</li>
+                            <li><i class="fas fa-snowflake text-primary"></i> Điều hòa</li>
+                            <li><i class="fas fa-mug-hot text-primary"></i> Ấm đun nước</li>
+                            <li><i class="fas fa-shower text-primary"></i> Bồn tắm/vòi sen</li>
+                            <li><i class="fas fa-utensils text-primary"></i> Đồ dùng phòng tắm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Booking Form -->
+                <!-- Phần form đặt phòng (thay thế phần hiện có) -->
+                <div class="card shadow-sm sticky-top" style="top: 120px;">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="fas fa-calendar-check me-2"></i>Đặt phòng</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <input type="hidden" asp-for="Room.Idroom" />
+
+                            <div class="mb-3">
+                                <label asp-for="BookingInput.StartDate" class="form-label"></label>
+                                <input asp-for="BookingInput.StartDate" class="form-control"
+                                       min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                                <span asp-validation-for="BookingInput.StartDate" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="BookingInput.EndDate" class="form-label"></label>
+                                <input asp-for="BookingInput.EndDate" class="form-control"
+                                       min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
+                                <span asp-validation-for="BookingInput.EndDate" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="BookingInput.GuestCount" class="form-label"></label>
+                                <select asp-for="BookingInput.GuestCount" class="form-select">
+                                    @for (int i = 1; i <= 10; i++)
+                                    {
+                                        <option value="@i">@i khách</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="BookingInput.GuestCount" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="BookingInput.CustomerName" class="form-label"></label>
+                                <input asp-for="BookingInput.CustomerName" class="form-control" />
+                                <span asp-validation-for="BookingInput.CustomerName" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="BookingInput.CustomerPhone" class="form-label"></label>
+                                <input asp-for="BookingInput.CustomerPhone" class="form-control" />
+                                <span asp-validation-for="BookingInput.CustomerPhone" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="BookingInput.Note" class="form-label"></label>
+                                <textarea asp-for="BookingInput.Note" class="form-control" rows="3"></textarea>
+                            </div>
+
+                            @if (Model.AvailableServices.Any())
+                            {
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Dịch vụ đi kèm (tùy chọn)</label>
+                                    <div class="row">
+                                        @foreach (var service in Model.AvailableServices)
+                                        {
+                                            <div class="col-md-6 mb-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                           type="checkbox"
+                                                           value="@service.Idservice"
+                                                           id="service-@service.Idservice"
+                                                           name="BookingInput.SelectedServiceIds"
+                                                    @(Model.BookingInput.SelectedServiceIds.Contains(service.Idservice) ? "checked" : "")>
+                                                    <label class="form-check-label" for="service-@service.Idservice">
+                                                        @service.Name - @service.Price.ToString("N0") VND
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-book me-2"></i>Đặt ngay
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                @section Scripts {
+                    <partial name="_ValidationScriptsPartial" />
+                    <script>
+                        // Xử lý ngày trong form đặt phòng
+                        document.querySelector('input[name="BookingInput.StartDate"]').addEventListener('change', function () {
+                            const endDateInput = document.querySelector('input[name="BookingInput.EndDate"]');
+                            const startDate = new Date(this.value);
+                            const minEndDate = new Date(startDate);
+                            minEndDate.setDate(minEndDate.getDate() + 1);
+
+                            endDateInput.min = minEndDate.toISOString().split('T')[0];
+
+                            if (new Date(endDateInput.value) < minEndDate) {
+                                endDateInput.value = minEndDate.toISOString().split('T')[0];
+                            }
+                        });
+                    </script>
+                }
+        </div>
+
+        <!-- Similar Rooms -->
+        @if (Model.SimilarRooms.Any())
+        {
+            <div class="mt-5">
+                <h4 class="mb-4"><i class="fas fa-door-open me-2"></i>Phòng tương tự</h4>
+                <div class="row">
+                    @foreach (var room in Model.SimilarRooms)
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="card similar-room-card h-100">
+                                <img src="@room.Image" class="card-img-top" alt="@room.Name" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title">@room.Name</h5>
+                                    <p class="text-danger fw-bold">@room.Price.ToString("N0") VND/đêm</p>
+                                    <a asp-page="/User/Details" asp-route-id="@room.Idroom" class="btn btn-outline-primary w-100">
+                                        <i class="fas fa-info-circle me-2"></i>Xem chi tiết
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    <script src="~/template/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="~/template/js/bootstrap.min.js"></script>
+    <script src="~/template/js/bootsnav.js"></script>
+    <script src="~/template/js/feather.min.js"></script>
+    <script src="~/template/js/jquery.counterup.min.js"></script>
+    <script src="~/template/js/waypoints.min.js"></script>
+    <script src="~/template/js/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="~/template/js/custom.js"></script>
+
+    <script>
+        // Thay đổi ảnh chính khi click vào thumbnail
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src;
+
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Xử lý ngày trong form đặt phòng
+        document.querySelector('input[name="startDate"]').addEventListener('change', function () {
+            const endDateInput = document.querySelector('input[name="endDate"]');
+            const startDate = new Date(this.value);
+            const minEndDate = new Date(startDate);
+            minEndDate.setDate(minEndDate.getDate() + 1);
+
+            endDateInput.min = minEndDate.toISOString().split('T')[0];
+
+            if (new Date(endDateInput.value) < minEndDate) {
+                endDateInput.value = minEndDate.toISOString().split('T')[0];
+            }
+        });
+    </script>
+</body>
+</html>

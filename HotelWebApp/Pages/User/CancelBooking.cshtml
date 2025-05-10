@@ -1,0 +1,63 @@
+﻿@page
+@model HotelWebApp.Pages.User.CancelBookingModel
+@{
+    ViewData["Title"] = "Hủy đơn đặt phòng";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-exclamation-triangle"></i> Xác nhận hủy đơn đặt phòng
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <h5><i class="fas fa-info-circle"></i> Bạn có chắc chắn muốn hủy đơn đặt phòng này?</h5>
+                        <p class="mb-0">Sau khi hủy, bạn không thể hoàn tác thao tác này.</p>
+                    </div>
+
+                    <div class="booking-details">
+                        <h5><i class="fas fa-info-circle"></i> Thông tin đơn đặt phòng</h5>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong><i class="fas fa-hashtag"></i> Mã đơn:</strong> @Model.Booking.Idbooking</p>
+                                <p><strong><i class="fas fa-calendar-check"></i> Ngày nhận:</strong> @Model.Booking.StartDate.ToString("dd/MM/yyyy")</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong><i class="fas fa-calendar-times"></i> Ngày trả:</strong> @Model.Booking.EndDate.ToString("dd/MM/yyyy")</p>
+                                <p>
+                                    <strong><i class="fas fa-tag"></i> Trạng thái:</strong>
+                                    <span class="badge @(Model.Booking.Status == "Confirmed" ? "bg-primary" : "bg-warning")">
+                                        @(Model.Booking.Status == "Confirmed" ? "Đã xác nhận" : "Chờ xử lý")
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form method="post" class="mt-4">
+                        <input type="hidden" asp-for="Booking.Idbooking" />
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button type="submit" class="btn btn-danger me-md-2">
+                                <i class="fas fa-trash-alt"></i> Xác nhận hủy
+                            </button>
+                            <a href="/User/PaymentHistory" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Quay lại
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Có thể thêm các script xử lý tại đây nếu cần
+    </script>
+}

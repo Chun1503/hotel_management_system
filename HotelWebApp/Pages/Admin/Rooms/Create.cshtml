@@ -1,0 +1,53 @@
+﻿@page
+@model HotelWebApp.Pages.Admin.Rooms.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Room</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Room.Name" class="control-label"></label>
+                <input asp-for="Room.Name" class="form-control" />
+                <span asp-validation-for="Room.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.IdroomType" class="control-label"></label>
+                <select asp-for="Room.IdroomType" class ="form-control" asp-items="ViewBag.IdroomType"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.Price" class="control-label"></label>
+                <input asp-for="Room.Price" class="form-control" />
+                <span asp-validation-for="Room.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.Image" class="control-label"></label>
+                <input asp-for="Room.Image" class="form-control" />
+                <span asp-validation-for="Room.Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Room.Status" class="control-label"></label>
+                <input asp-for="Room.Status" class="form-control" />
+                <span asp-validation-for="Room.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

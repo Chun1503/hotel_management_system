@@ -1,10 +1,4 @@
 ﻿using HotelBusiness.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelRepositories.IRepository
 {
@@ -13,5 +7,12 @@ namespace HotelRepositories.IRepository
         Task<bool> RegisterAsync(Account account);
         Task<Account?> LoginAsync(string emailOrUsername, string password);
         Task<bool> ChangePasswordAsync(int id, string oldPassword, string newPassword);
+        Task<bool> UpdateAccountStatusAsync(int id, string status);
+        Task<bool> UpdateProfileAsync(int id, string name, string phone);
+        Task<Account?> GetAccountByEmailAsync(string email);
+        Task<Account?> GetAccountByUsernameEmailAsync(string username);
+        string GenerateOtpCode();
+        Task SendOtpEmailAsync(string email, string otpCode);
+        Task<bool> ResetPasswordAsync(string email, string newPassword);
     }
 }

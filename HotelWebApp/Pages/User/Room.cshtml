@@ -1,0 +1,359 @@
+﻿@page
+@model HotelWebApp.Pages.User.RoomModel
+@{
+    ViewData["Title"] = "Tìm phòng trống";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <title>@ViewData["Title"]</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="~/template/images/favicon.png" />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/template/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/template/css/linearicons.css">
+    <link rel="stylesheet" href="~/template/css/animate.css">
+    <link rel="stylesheet" href="~/template/css/flaticon.css">
+    <link rel="stylesheet" href="~/template/css/slick.css">
+    <link rel="stylesheet" href="~/template/css/slick-theme.css">
+    <link rel="stylesheet" href="~/template/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/template/css/bootsnav.css">
+    <link rel="stylesheet" href="~/template/css/style.css">
+    <link rel="stylesheet" href="~/template/css/responsive.css">
+
+    <style>
+        .room-container {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .search-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+            .search-card .card-body {
+                padding: 25px;
+            }
+
+        .room-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border: none;
+        }
+
+        .room-card-header {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px 10px 0 0 !important;
+        }
+
+        .room-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .room-badge {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+        }
+
+        .price-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .btn-booking {
+            background-color: #3498db;
+            border-color: #3498db;
+        }
+
+        .btn-details {
+            background-color: #2ecc71;
+            border-color: #2ecc71;
+        }
+
+        .search-label {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header và Navigation giữ nguyên -->
+    <!-- ... -->
+    <!-- Main Content -->
+    <!-- Header Top -->
+    <header id="header-top" class="header-top">
+        <ul>
+            <li>
+                <div class="header-top-left">
+                    <ul>
+                        <li class="select-opt">
+                            <select name="language" id="language">
+                                <option value="default">EN</option>
+                                <option value="Bangla">BN</option>
+                                <option value="Arabic">AB</option>
+                            </select>
+                        </li>
+                        <li class="select-opt">
+                            <select name="currency" id="currency">
+                                <option value="usd">USD</option>
+                                <option value="euro">Euro</option>
+                                <option value="bdt">BDT</option>
+                            </select>
+                        </li>
+                        <li class="select-opt">
+                            <a href="#"><span class="lnr lnr-magnifier"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="head-responsive-right pull-right">
+                <div class="header-top-right">
+                    <ul>
+                        <li class="header-top-contact">
+                            +1 222 777 6565
+                        </li>
+                        @if (HttpContext.Session.GetString("UserName") != null)
+                        {
+                            <li class="header-top-contact dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Welcome, @HttpContext.Session.GetString("UserName") <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a asp-page="/User/Profile">Profile</a></li>
+                                    <li> <a asp-page-handler="Logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="header-top-contact">
+                                <a asp-page="/Account/Login">sign in</a>
+                            </li>
+                            <li class="header-top-contact">
+                                <a asp-page="/Account/Register">register</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </header>
+
+    <!-- Top Area -->
+    <section class="top-area">
+        <div class="header-area">
+            <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" asp-page="/Index">Hotel<span>Booking</span></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="Home"><a asp-page="/Index">Home</a></li>
+                            <li class="active"><a asp-page="/User/Room">Phòng</a></li>
+                            <li class="scroll"><a href="#contact">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="clearfix"></div>
+    </section>
+    <div class="container room-container">
+        <!-- Form tìm kiếm -->
+        <div class="card search-card">
+            <div class="card-body">
+                <h4 class="card-title mb-4"><i class="fas fa-search"></i> Tìm kiếm phòng</h4>
+                <form method="get" class="row g-3">
+                    <div class="col-md-3">
+                        <label class="search-label">Ngày nhận phòng</label>
+                        <input type="date" asp-for="StartDate" class="form-control"
+                               min="@DateTime.Today.ToString("yyyy-MM-dd")" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="search-label">Ngày trả phòng</label>
+                        <input type="date" asp-for="EndDate" class="form-control"
+                               min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="search-label">Loại phòng</label>
+                        <select asp-for="RoomTypeId" asp-items="Model.RoomTypes" class="form-select">
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-search me-2"></i>Tìm kiếm
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Hiển thị kết quả -->
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation-circle me-2"></i>@TempData["ErrorMessage"]
+            </div>
+        }
+
+        <div class="card room-card">
+            <div class="card-header room-card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-calendar-alt me-2"></i>
+                    @Model.CurrentSearchRange
+                    @if (Model.RoomTypeId.HasValue)
+                    {
+                        <span class="ms-3">
+                            <i class="fas fa-bed me-2"></i>
+                            @Model.RoomTypes.FirstOrDefault(rt => rt.Value == Model.RoomTypeId.ToString())?.Text
+                        </span>
+                    }
+                </h5>
+            </div>
+
+            <div class="card-body">
+                @if (Model.AvailableRooms.Any())
+                {
+                    <div class="row">
+                        @foreach (var room in Model.AvailableRooms)
+                        {
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="row g-0">
+                                        <div class="col-md-5">
+                                            <img src="@(string.IsNullOrEmpty(room.Image) ? "/images/default-room.jpg" : room.Image)"
+                                                 class="room-img h-100" alt="@room.Name">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="card-body d-flex flex-column h-100">
+                                                <h5 class="card-title">@room.Name</h5>
+                                                <div class="mb-2">
+                                                    <span class="badge bg-secondary room-badge">
+                                                        <i class="fas fa-tag me-1"></i> @room.IdroomTypeNavigation?.TypeName
+                                                    </span>
+                                                    <span class="badge bg-success room-badge ms-2">
+                                                        <i class="fas fa-check-circle me-1"></i> @room.Status
+                                                    </span>
+                                                </div>
+                                                <p class="price-text mb-3">
+                                                    @room.Price.ToString("N0") VND/đêm
+                                                </p>
+                                                <div class="mt-auto">
+                                                    <div class="d-grid gap-2 d-md-flex">
+                                                        <a asp-page="/Booking/Create" asp-route-roomId="@room.Idroom"
+                                                           asp-route-startDate="@Model.StartDate?.ToString("yyyy-MM-dd")"
+                                                           asp-route-endDate="@Model.EndDate?.ToString("yyyy-MM-dd")"
+                                                           class="btn btn-booking text-white me-md-2">
+                                                            <i class="fas fa-book me-1"></i> Đặt ngay
+                                                        </a>
+                                                        <a asp-page="/User/Details" asp-route-id="@room.Idroom"
+                                                           class="btn btn-details text-white">
+                                                            <i class="fas fa-info-circle me-1"></i> Chi tiết
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="text-end">
+                        <p class="text-muted">
+                            Tìm thấy <strong>@Model.AvailableRooms.Count</strong> phòng phù hợp
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center py-5">
+                        <i class="fas fa-door-closed fa-3x text-muted mb-4"></i>
+                        <h4 class="text-muted">Không tìm thấy phòng trống</h4>
+                        <p class="text-muted">
+                            Không có phòng trống phù hợp với tiêu chí tìm kiếm của bạn.<br>
+                            Vui lòng thử lại với khoảng ngày hoặc loại phòng khác.
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer giữ nguyên -->
+    <!-- ... -->
+    <!-- JavaScript -->
+    <script src="~/template/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="~/template/js/bootstrap.min.js"></script>
+    <script src="~/template/js/bootsnav.js"></script>
+    <script src="~/template/js/feather.min.js"></script>
+    <script src="~/template/js/jquery.counterup.min.js"></script>
+    <script src="~/template/js/waypoints.min.js"></script>
+    <script src="~/template/js/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="~/template/js/custom.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Xử lý ngày mặc định
+            const today = new Date().toISOString().split('T')[0];
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const tomorrowStr = tomorrow.toISOString().split('T')[0];
+
+            // Set giá trị mặc định nếu chưa có
+            if (!$('input[name="StartDate"]').val()) {
+                $('input[name="StartDate"]').val(today);
+            }
+            if (!$('input[name="EndDate"]').val()) {
+                $('input[name="EndDate"]').val(tomorrowStr);
+            }
+
+            // Validate ngày kết thúc phải sau ngày bắt đầu
+            $('input[name="StartDate"]').change(function () {
+                const startDate = new Date(this.value);
+                const endDate = new Date($('input[name="EndDate"]').val());
+
+                if (endDate <= startDate) {
+                    const newEndDate = new Date(startDate);
+                    newEndDate.setDate(newEndDate.getDate() + 1);
+                    $('input[name="EndDate"]').val(newEndDate.toISOString().split('T')[0]);
+                }
+
+                // Đảm bảo ngày kết thúc không nhỏ hơn ngày bắt đầu + 1
+                $('input[name="EndDate"]').attr('min', new Date(startDate.setDate(startDate.getDate() + 1)).toISOString().split('T')[0]);
+            });
+        });
+    </script>
+</body>
+</html>
